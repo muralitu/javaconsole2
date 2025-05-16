@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         VERSION = "${env.BUILD_NUMBER}"
-        JAVA_HOME = tool name: 'jdk', type: 'java'
+        JAVA_HOME = tool name: 'jdk', type: 'jdk'
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
 
