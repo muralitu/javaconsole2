@@ -10,6 +10,7 @@ plugins {
     id 'application'
     id 'pmd'
     id 'checkstyle'
+    id 'jacoco'
 }
 
 repositories {
