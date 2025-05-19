@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh "./gradlew clean build -PbuildVersion=${VERSION} -x test"
+                        sh "./gradlew clean build -PbuildVersion=${VERSION} test"
                         echo "✅ Build completed successfully."
                     } catch (err) {
                         echo "❌ Build failed: ${err}"
@@ -54,7 +54,7 @@ pipeline {
 
         stage('Publish Reports') {
             steps {
-                junit 'build/test-results/test/*.xml'
+                junit 'app/build/test-results/**/*.xml'
                 jacoco(
                     execPattern: 'build/jacoco/*.exec',
                     classPattern: 'build/classes',
