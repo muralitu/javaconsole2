@@ -9,6 +9,7 @@ plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
     id 'pmd'
+    id 'checkstyle'
 }
 
 repositories {
@@ -20,6 +21,11 @@ pmd {
     toolVersion = '6.55.0' // or any version you prefer
     ruleSets = [] // disable default rulesets
     ruleSetFiles = files('config/pmd/ruleset.xml') // your custom ruleset
+}
+
+checkstyle {
+    toolVersion = '10.12.1' // or your preferred version
+    configFile = file('config/checkstyle/checkstyle.xml') // custom rules
 }
 
 
