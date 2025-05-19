@@ -56,14 +56,14 @@ pipeline {
             steps {
                 junit 'app/build/test-results/**/*.xml'
                 jacoco(
-                    execPattern: 'build/jacoco/*.exec',
-                    classPattern: 'build/classes',
+                    execPattern: 'app/build/jacoco/*.exec',
+                    classPattern: 'app/build/classes',
                     sourcePattern: 'src/main/java'
                 )
                 recordIssues(
                     tools: [
-                        checkStyle(pattern: 'build/reports/checkstyle/*.xml'),
-                        pmdParser(pattern: 'build/reports/pmd/*.xml')
+                        checkStyle(pattern: 'app/build/reports/checkstyle/*.xml'),
+                        pmdParser(pattern: 'app/build/reports/pmd/*.xml')
                     ]
                 )
             }
@@ -71,7 +71,7 @@ pipeline {
 
         stage('Archive Artifacts') {
             steps {
-                archiveArtifacts artifacts: 'build/libs/*.war', fingerprint: true
+                archiveArtifacts artifacts: 'app/build/libs/*.war', fingerprint: true
             }
         }
     }
