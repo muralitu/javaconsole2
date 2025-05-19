@@ -11,6 +11,8 @@ plugins {
     id 'pmd'
     id 'checkstyle'
     id 'jacoco'
+    id 'java'
+    id 'war'
 }
 
 repositories {
