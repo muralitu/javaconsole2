@@ -54,7 +54,7 @@ pipeline {
 
         stage('Publish Reports') {
             steps {
-                junit 'build/test-results/**/*.xml'
+                junit 'build/test-results/test/*.xml'
                 jacoco(
                     execPattern: 'build/jacoco/*.exec',
                     classPattern: 'build/classes',
