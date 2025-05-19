@@ -17,17 +17,6 @@ repositories {
     mavenCentral()
 }
 
-pmd {
-    toolVersion = '6.55.0' // or any version you prefer
-    ruleSets = [] // disable default rulesets
-    ruleSetFiles = files('config/pmd/ruleset.xml') // your custom ruleset
-}
-
-checkstyle {
-    toolVersion = '10.12.1' // or your preferred version
-    configFile = file('config/checkstyle/checkstyle.xml') // custom rules
-}
-
 
 dependencies {
     // Use JUnit Jupiter for testing.
